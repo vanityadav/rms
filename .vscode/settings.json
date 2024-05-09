@@ -1,0 +1,25 @@
+{
+  // Value to be used for css 'background-position' for both images (eg: center, right, left, etc.)
+  "doki.background.anchor": "center",
+
+  // Whether you want an image in your empty editor background when running the 'Install Wallpaper' command.
+  "doki.background.enabled": true,
+
+  // Absolute file path of the image you want to use as your empty editor background.
+  "doki.background.path": "",
+
+  // Custom name you can use that shows up in the status bar next to the ❤️
+  "doki.statusbar.name": "oneIT",
+
+  // Additional CSS stylings you can apply to the installed sticker (such as positioning).
+  "doki.sticker.css": "z-index:1;background-position:98% 96%;background-size:100px;",
+
+  // Absolute file path of the image you want to use as your sticker.
+  "doki.sticker.path": "F:/anime/sticker/flex.gif",
+
+  // Whether you want an image on top of your code editor, when running the 'Install Wallpaper' command.
+  "doki.wallpaper.enabled": true,
+
+  // Absolute file path of the image you want to use as your glass pane wallpaper. (Image should be transparent)
+  "doki.wallpaper.path": ""
+}

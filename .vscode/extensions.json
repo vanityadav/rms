@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "ms-vscode.makefile-tools",
+    "golang.go",
+    "streetsidesoftware.code-spell-checker",
+    "unthrottled.doki-theme"
+  ]
+}
