@@ -1,8 +1,9 @@
 @import "tailwindcss";
+
 :root {
   color-scheme: light dark;
 }
 
 @theme {
-  color-primary-100: lightdark(blue, green);
+  --color-primary: light-dark(green, blue);
 }
