@@ -1,0 +1,20 @@
+{
+  "topNavigation": {
+    "home": {
+      "link": "/home",
+      "label": "Home Page"
+    }
+  },
+  "footerLinks": [
+    {
+      "link": "/home",
+      "label": "Home Page"
+    }
+  ],
+  "socialLinks": [
+    {
+      "link": "/home",
+      "label": "Home Page"
+    }
+  ]
+}

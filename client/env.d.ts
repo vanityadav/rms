@@ -1,3 +1,5 @@
 namespace NodeJS {
-  interface ProcessEnv {}
+  interface ProcessEnv {
+    SECRET_KEY: string;
+  }
 }
