@@ -33,7 +33,7 @@ const activeSessionKey = "session";
 
 const updateActiveSession = (response?: NextResponse) => {
   if (response) {
-    response.cookies.set(activeSessionKey, "active", { maxAge: 100 });
+    response.cookies.set(activeSessionKey, "active", { maxAge: 10 });
     return;
   }
 

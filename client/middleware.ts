@@ -12,20 +12,22 @@ export async function middleware(request: NextRequest) {
 
   const session = await getSession(request, response);
 
-  if (isSessionActive(request)) {
+  if (isSessionActive(request) && session?.token) {
     updateActiveSession(response);
     return response;
   }
 
   try {
-    await refreshToken(session);
+    const upSession = await refreshToken(session);
+    if (!upSession?.token) throw new Error("Session Expired");
+    return response;
   } catch (err) {
     return NextResponse.redirect(
-      new URL(`/callbackUrl=${request.nextUrl.href}`, request.nextUrl.origin)
+      new URL(`?callbackUrl=${request.nextUrl.href}`, request.nextUrl.origin)
     );
   }
 }
 
 export const config = {
-  matcher: ["/:path*"],
+  matcher: ["/dashboard"],
 };
