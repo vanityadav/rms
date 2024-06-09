@@ -1,8 +1,9 @@
 # RMS (WIP)
 
-### Run On Local
-``` bash
-cd server -> go mod tidy -> make dev 
+## Local Server
+
+```bash
+cd server -> go mod tidy -> make watch
 
 cd client -> bun i -> bun dev
 ```

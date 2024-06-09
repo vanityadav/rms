@@ -1,26 +1,27 @@
 package main
 
 import (
+	"fmt"
 	"log"
+	"os"
+	"strconv"
 
 	"github.com/vanityadav/rms/server/api"
-	"github.com/vanityadav/rms/server/db"
 )
 
 func main() {
-	sqlDb, dbError := db.Init()
 
-	if dbError != nil {
-		log.Fatal("could not init db connection - " + dbError.Error())
-	}
+	port, _ := strconv.Atoi(os.Getenv("PORT"))
+	Addr := fmt.Sprintf(":%d", port)
 
-	server := api.NewAPIServer(":8080", sqlDb)
+	server := api.NewServer(Addr)
 
-	err := server.Run()
+	err := server.ListenAndServe()
 
 	if err != nil {
-		db.Close(sqlDb)
-		log.Fatal(err.Error())
+		panic(fmt.Sprintf("cannot start server: %s", err))
 	}
+
+	log.Printf("Server is running at port :%s", Addr)
 
 }
