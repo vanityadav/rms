@@ -2,19 +2,26 @@ package api
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 )
 
 type User struct {
-	name  string
-	email string
-	id    int
+	Name  string `json:"name"`
+	Email string `json:"email"`
+	Id    int    `json:"id"`
 }
 
 func (s *Server) getUserHandler(
 	w http.ResponseWriter, r *http.Request) {
 
-	jsonResp, _ := json.Marshal(&User{name: "Vanit", email: "vanityadav08@gmail.com", id: 3})
+	payload := User{Name: "Vanit", Email: "vanityadav08@gmail.com", Id: 3}
+
+	jsonResp, err := json.Marshal(payload)
+	if err != nil {
+		log.Fatalf("error handling JSON marshal. Err: %v", err)
+	}
 
 	w.Write(jsonResp)
+
 }
